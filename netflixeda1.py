@@ -10,7 +10,7 @@ df = pd.read_csv('netflix_titles.csv')  # Read the Netflix dataset from a CSV fi
 df.fillna("Unknown", inplace=True)  # Fill missing values in the DataFrame with "Unknown"
 df['date_added'] = pd.to_datetime(df['date_added'], errors='coerce')  # Convert 'date_added' column to datetime format
 wrong_ratings = ['74 min', '84 min', '66 min']
-df.loc[df['rating'].isin(wrong_ratings), 'rating'] = "Unknown"
+df.loc[df['rating'].isin(wrong_ratings), 'rating'] = "Unknown" #Changes the wrong rating to Unknown
 
 # Movies vs TV Shows
 st.subheader("Movies vs. TV Shows")  # Create a subheader for the Movies vs TV Shows section
