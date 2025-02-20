@@ -64,7 +64,7 @@ st.plotly_chart(fig)  # Display the chart in the Streamlit app
 # Distribution of Movie Durations
 st.subheader("Distribution of Movie Durations")  # Create a subheader for the Movie Durations section
 df['duration_minutes'] = df['duration'].str.extract('(\\d+)').astype(float)  # Extract the duration in minutes from the 'duration' column
-fig = px.histogram(df[df['type'] == "Movie"], x='duration_minutes', nbins=30, title="Distribution of Movie Durations", color_discrete_sequence=['purple'])  # Create a histogram for movie durations
+fig = px.histogram(df[df['type'] == "Movie"], x='duration_minutes', nbins=10, title="Distribution of Movie Durations", color_discrete_sequence=['purple'])  # Create a histogram for movie durations
 st.plotly_chart(fig)  # Display the chart in the Streamlit app
 
 # Top 5 Longest and Shortest Movies
