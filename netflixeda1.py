@@ -54,8 +54,8 @@ st.plotly_chart(fig)  # Display the chart in the Streamlit app
 
 # Movies vs TV Shows in Top 10 Countries
 st.subheader("Movies vs TV Shows in Top 10 Countries")  # Create a subheader for the Movies vs TV Shows in Top 10 Countries section
-top_countries = df["country" != "Unknown"].value_counts().head(10).index  # Get the top 10 countries
-df_filtered = df[df["country"].isin(top_countries)]  # Filter the DataFrame for the top 10 countries
+top_countries = df["country"].value_counts().head(10).index  # Get the top 10 countries
+df_filtered = df[df["country" != "Unknown"].isin(top_countries)]  # Filter the DataFrame for the top 10 countries
 fig = px.histogram(df_filtered, y="country", color="type", title="Movies vs TV Shows in Top 10 Countries", barmode='group')  # Create a grouped histogram for Movies vs TV Shows
 st.plotly_chart(fig)  # Display the chart in the Streamlit app
 
