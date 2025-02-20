@@ -113,9 +113,3 @@ st.subheader("Top 10 Longest TV Shows")  # Create a subheader for the Top 10 Lon
 longest_tv_shows = tv_shows.nlargest(10, 'season_count')  # Get the top 10 longest TV Shows based on the number of seasons
 fig = px.bar(x=longest_tv_shows['season_count'], y=longest_tv_shows['title'], orientation='h', title="Top 10 Longest TV Shows", color=longest_tv_shows['title'])  # Create a horizontal bar chart for the longest TV Shows
 st.plotly_chart(fig)  # Display the chart in the Streamlit app
-
-# Top 10 Shortest TV Shows
-st.subheader("Top 10 Shortest TV Shows")  # Create a subheader for the Top 10 Smallest TV Shows section
-smallest_tv_shows = tv_shows.nsmallest(10, 'season_count')  # Get the top 10 Smallest TV Shows based on the number of seasons
-fig = px.bar(x=smallest_tv_shows['season_count'], y=smallest_tv_shows['title'], orientation='h', title="Top 10 Smallest TV Shows", color=smallest_tv_shows['title'])  # Create a horizontal bar chart for the Smallest TV Shows
-st.plotly_chart(fig)  # Display the chart in the Streamlit app
