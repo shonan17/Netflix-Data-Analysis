@@ -13,7 +13,7 @@ df['date_added'] = pd.to_datetime(df['date_added'], errors='coerce')  # Convert 
 # Movies vs TV Shows
 st.subheader("Movies vs. TV Shows")  # Create a subheader for the Movies vs TV Shows section
 type_counts = df["type"].value_counts()  # Count the occurrences of each type (Movie/TV Show)
-fig = px.bar(x=df["Category"]type_counts.index, y=type_counts.values, color=type_counts.index, title="Movies vs. TV Shows")  # Create a bar chart for Movies vs TV Shows
+fig = px.bar(x=type_counts.index, y=type_counts.values, color=type_counts.index, title="Movies vs. TV Shows")  # Create a bar chart for Movies vs TV Shows
 st.plotly_chart(fig)  # Display the chart in the Streamlit app
 
 # Top 10 Genres
